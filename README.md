@@ -100,17 +100,15 @@ The process of identifying and prioritizing these requirements was based on real
 
 ### Architecture Diagram
 
-[Insert Architecture Diagram Here]
-
-![](classdiagram.png)
+![](iamges.png)
 
 ### Class Diagram
 
-[Insert Class Diagram Here]
+![](classdiagram.png)
 
 ### Use Case Diagram
 
-[Insert Use Case Diagram Here]
+![](usecase.jpeg)
 
 ### Design Patterns used:
 
