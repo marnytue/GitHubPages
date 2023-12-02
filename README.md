@@ -101,6 +101,7 @@ The process of identifying and prioritizing these requirements was based on real
 ### Architecture Diagram
 
 [Insert Architecture Diagram Here]
+
 ![](class diagram.png)
 
 ### Class Diagram
