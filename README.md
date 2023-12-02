@@ -100,7 +100,7 @@ The process of identifying and prioritizing these requirements was based on real
 
 ### Architecture Diagram
 
-![](iamges.png)
+![](images.png)
 
 ### Class Diagram
 
