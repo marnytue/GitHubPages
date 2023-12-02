@@ -1,4 +1,4 @@
-# Introduction/Background
+## Introduction/Background
 
 CCubed is an application that provides a quick and easy solution to groups, either professionally or leisurely, being able to find free time in their schedules. This application takes in the ability to compare calendars used in the most popular calendar applications (Microsoft and Google). This project improves and streamlines the meeting time dilemma and is an effortless solution to an often petty issue.
 
