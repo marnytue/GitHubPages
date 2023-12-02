@@ -1,6 +1,4 @@
-# Group3_Project2_Report
-
-## Introduction/Background
+# Introduction/Background
 
 CCubed is an application that provides a quick and easy solution to groups, either professionally or leisurely, being able to find free time in their schedules. This application takes in the ability to compare calendars used in the most popular calendar applications (Microsoft and Google). This project improves and streamlines the meeting time dilemma and is an effortless solution to an often petty issue.
 
@@ -19,89 +17,141 @@ Furthermore, existing solutions like When2Meet require users to manually enter t
 ## Software Technologies
 
 ### JavaScript:
-- **Node.js:** Backend for making calls to Google calendar API and Microsoft calendar API, to gather event lists and compare calendars for free time calculation.
-- **React.js:** Frontend implementation for login services, displaying the Calendar, and showing free time upon clicking a date.
+
+- **Node.js**: This serves as the backend of our application, which makes calls to Google calendar API and Microsoft calendar API, to gather event lists. This is also where we compare calendars and calculate free time.
+- **React.js**: We used React to build the frontend of our application. This is where we implemented log in services for Google and Microsoft using firebase (mentioned below). And we also used it to display the Calendar, and once the user clicks on a date, they get a free time of that day.
+- **npm modules**: to manage the package dependencies for both the frontend and backend.
 
 ### Storage:
-- **Firebase:** Used for login services, hosting the frontend, and authentication database.
-- **Firestore:** Database for storing users’ email, authentication token, calendar events, and meeting information.
+
+- **Firebase**: Used for login services, used GoogleAuth for google login and OAuth for Microsoft. And we used firebase to host our frontend.
+- **FireStore**: Served as our events and authentication database. We saved users’ email, authentication token (to make the calendar API call), calendar events and some other information about a meeting, like its status, amount of users, etc..
 
 ### API:
-- **Google Calendar API:** Retrieve event lists for calendar comparison logic.
-- **Microsoft Calendar API:** Retrieve event lists for calendar comparison logic.
 
-### Other Tools:
-- **Git/Github:** Version control and hosting the report.
-- **Google Cloud Platform:** Used to host the backend of the application.
+- **Google Calendar API** - to get an event list of the calendar when users signed in using their google account. These events were used in our calendar comparison logic.
+- **Microsoft Calendar API** - to get an event list for users signing in with Microsoft accounts. They were also used in calendar comparison logic.
+
+### Git/Github:
+
+- Used as version control. And github pages to host this report.
+
+### Google Cloud Platform:
+
+- Used to host the backend of our application.
 
 ## Project Lifecycle
 
 ### Planning Stage:
-- Understanding project requirements and defining the project idea.
-- Breaking the team into frontend & backend groups.
+
+We were able to begin planning shortly after the project requirements were released so that we were able to work in an efficient manner. This stage began with us ensuring that we understood the project requirements and specifics for the deliverable. Then we began brainstorming on the project idea that could have potential for actual application while being unique. We analyzed that the selected project would satisfy all requirements while keeping a realistic scope. Once we agreed upon a project idea we broke up the team into 2 main groups: frontend & backend.
 
 ### Design Stage:
-- Identifying key features, creating mockups, and selecting frameworks.
-- Choosing additional features for implementation.
+
+Here we further discussed what are the key features that we needed for the project and began to create mockups of our project that would include these features. We did not stop there because we also put ourselves in the shoes of the stakeholders/users and asked “what other notable features will be nice to have”. From this, we selected additional features that we wanted to add. After all the high level thinking we began to select appropriate frameworks, architectural designs in the front & backend.
 
 ### Implementation Stage:
-- Developing frontend and backend simultaneously.
-- Overcoming challenges in development and ensuring functionality through testing.
+
+Up until this point we have been following a waterfall approach for the project and we saw fit to continue this since we knew our project requirements well. A notable thing to mention here is that at this stage we were able to have the frontend and backend be developed simultaneously. This was strongly possible with our consistent communication between the 2 teams. Each step along the way, we endured challenges as certain components in the front end were not working as properly and having authentication issues when logging in into our program in the backend but each team ensured every component worked correctly by writing test cases for the backend and simulating edge cases for the front end. As for progression of the project, we were roughly able to allocate a week for stages: requirements, design, and release. As for execution and testing, we have a little over 2 weeks and a week for each respectively.
 
 ## Methodologies and Processes
 
-### Waterfall Method:
-- Sequential stages: requirements, design, release, execution, and testing.
-- Weekly checklist for project management, using Git & Github for version control and code review.
+As mentioned above, we followed the waterfall method. The first 3 stages are discussed above as for testing, information is discussed further below in the Testing section. Release is straightforward as it was just to deploy the program to the Google Cloud Platform. As for project management we kept a weekly checklist of what needed to be done that week while using Git & Github to ensure only functional and tested code was pushed to main. Required code review/approvals was in place to ensure this was the case.
 
-### Requirements
+## Requirements
+
+### Functional and Non-Functional Requirements
 
 #### Functional Requirements:
-- Authentication of users upon login.
-- Real-time updates on calendar changes.
-- Visual representation of availability.
-- Access to meetings for comparison.
+
+- Authentication of user whenever they log into their specified account (Google or Microsoft)
+- Consistent Real-Time updates whenever the calendar undertakes any changes
+- Visual updates to allow users to view when their availability is open and ability to view the specified time
+- Access to any meeting with the code in order to compare
 
 #### Non-Functional Requirements:
-- Calendar update within 10 seconds.
-- Log out with authentication within 20 seconds.
 
-#### MMFs (Minimal Marketable Features)
-- Calendar Comparison: Displays mutual availability, specific day view, and keeps events private.
-- Popular Calendar Integration: Allows login and access to Microsoft and Google calendars.
-- Real-Time Connection: Refreshes comparisons on calendar change, enables continuous tracking of openings, and avoids the need for new meeting sessions.
+- Update of the calendar will occur within 10 seconds of the change being made
+- Ability to log out of whichever account with Authentication in 20 seconds
+
+### MMFs
+
+#### Calendar Comparison
+
+- Displays a calendar with all days where there is mutual availability.
+- Pressing a specific day allows viewing of all the available times during that day.
+- Keeps conflict details and events private.
+
+#### Popular Calendar Integration
+
+- Allow users to login to their Microsoft accounts and access their Outlook calendars.
+- Allow users to login to their Google accounts and access their Google calendars.
+- Integration with popular calendar apps prevents the tedious process of exporting and uploading calendar files manually.
+
+#### Real-Time Connection
+
+- Refreshing the calendar comparison page reruns freetime comparison calculations if a user changes their calendar.
+- Allows users to continuously keep track of each other's openings.
+- Avoids the need for making new meeting sessions after every calendar update.
+
+The process of identifying and prioritizing these requirements was based on real life experiences. Everyone in our group had used apps that were time consuming and error prone when it comes to figuring out free time. That’s why we prioritized integrating popular calendars like google and outlook calendars to calculate and provide the free times to our users. And to ensure that users see the change without having to log back in, for the convenience, we made real-time connection a requirement.
 
 ## Design
 
 ### Architecture Diagram
 
+[Insert Architecture Diagram Here]
+
 ### Class Diagram
+
+[Insert Class Diagram Here]
 
 ### Use Case Diagram
 
-#### Design Patterns used:
-- **Singleton Pattern:** Implemented for EventParser and CalendarComparator classes for memory efficiency.
-- **Module Pattern:** To organize files and contents for easier extension and implementation.
+[Insert Use Case Diagram Here]
+
+### Design Patterns used:
+
+#### Singleton Pattern:
+
+We implemented a singleton pattern for the EventParser and CalendarComparator classes.
+The singleton pattern ensured we only had one instance of classes that only needed a single instance, thus providing easy access while limiting memory usage.
+
+#### Module Pattern:
+
+We implemented this specific design pattern to help keep our files small and all of their contents closely related.
+This made the process of extending and implementing objects easier.
 
 ## Testing
 
 ### Tools:
-- **Chai:** JavaScript assertion library for backend.
-- **Jest:** JavaScript assertion library for frontend.
+
+- **Chai**: JavaScript assertion library
+- **Jest**: JavaScript assertion library
 
 ### White Box Testing:
-- Certification of backend and frontend interactions.
-- Extensive unit tests for freetime array building.
+
+- Used Chai to certify backend interactions behave as expected.
+- Used Jest to certify that frontend interactions behave as expected.
+- Created extensive unit tests that tested all possible combinations of events for freetime array building.
+- Tested frontend with manual file upload before backend connections.
 
 ### Black Box Testing:
-- Testing implemented APIs and Firebase authentication endpoints.
+
+- Tested all implemented APIs using black box testing.
+- Firebase authentication endpoints tested.
+- Google and Outlook email login tested, along with backend calls to their APIs.
 
 ### Integration Testing:
-- Verification of frontend-backend integration.
-- Regression testing to ensure expected behavior post-integration.
+
+- Performed extensive integration testing with manual verification.
+- Ensured all processes behaved as expected when frontend and backend were integrated.
+- Did regression testing to ensure backend-frontend integration did not produce new and unexpected behavior.
 
 ## Conclusion
 
-For this project, a test-driven development mindset was adopted, writing unit tests before implementation. This approach ensured code demonstration aligned with intended functionality, saving time in bug discovery and fixing.
+For this project, we adopted a test-driven development mindset and wrote unit tests for our classes before implementing them.
+By doing this, we were able to ensure that we had code that could be demonstrated to work as intended.
+Developing tests before our implementation saved us from discovering bugs at a point that made them prohibitively time intensive to fix.
 
-[GitHub repo link](https://github.com/SushGuha/Calendar)
+GitHub repo link: [https://github.com/SushGuha/Calendar](https://github.com/SushGuha/Calendar)
